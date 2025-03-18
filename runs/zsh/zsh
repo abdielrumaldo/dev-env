@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+sudo apt install zsh
+
+if [ -f ~/bin/zsh ]; then
+   "~/bin/zsh -l"
+fi  

@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+script_dir=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
+cd $script_dir
+echo "$script_dir"
+
+sudo apt install tmux
+
+git clone --depth 1 https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm" 
+
+echo "Moving tmux Config Files"
+cp .tmux.conf "$HOME/.tmux.conf"

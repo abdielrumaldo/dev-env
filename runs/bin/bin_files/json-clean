@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+read -p ">>> " input 
+parsed=$(sed -e 's/^"//'  -e 's/"$//' <<< $input)
+converted_input=$(echo $parsed | tr \' \") 
+
+json_data=$(echo "$converted_input" | jq '.')
+echo $json_data | pbcopy 
+echo "$json_data" | jq '.'
+echo "Copied to Clipboard"
