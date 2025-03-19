@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-echo "Hello from neovim"
+sudo apt install build-essential
