@@ -1,17 +1,6 @@
 #!/usr/bin/env bash
 
-
-# If it exists, remove current config
-if [ -d "$HOME/.oh-my-zsh" ]; then
-    echo "Removing existing oh-my-zsh"
-    rm -rf "$HOME/.oh-my-zsh" 
-fi
-
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-
-# Copy Config
-echo "Moving oh-my-zsh Config Files"
-cp .zshrc $HOME/.zshrc
 
 # Install plugins
 OMZ_PLUGIN=".oh-my-zsh/custom/plugins"

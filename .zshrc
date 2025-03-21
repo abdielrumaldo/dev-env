@@ -102,9 +102,8 @@ source $ZSH/oh-my-zsh.sh
 alias zshconfig="nvim ~/.zshrc"
 alias zshsource="source ~/.zshrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
-alias tmuxconfig="nvim ~/.config/tmux/tmux.conf"
-alias tmuxsource="tmux source ~/.config/tmux/tmux.conf"
-alias fetch-secret="bash ~/.config/bin/secret-fetcher"
+alias tmuxconfig="nvim ~/.config/.tmux.conf"
+alias tmuxsource="tmux source ~/.tmux.conf"
 #
 # fzf support for **
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

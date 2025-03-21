@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-# Setup directory
-script_dir=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
-cd $script_dir
-
-echo "Moving custom bin files from $script_dir"
-cp bin_files/ "$HOME/.config/bin" -r
