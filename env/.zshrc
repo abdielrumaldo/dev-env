@@ -75,6 +75,7 @@ ZSH_THEME="mortalscumbag"
 plugins=(git zsh-autosuggestions zsh-completions zsh-syntax-highlighting zsh-z fzf-zsh-plugin)
 
 source $ZSH/oh-my-zsh.sh
+source $HOME/.zsh_profile
 
 # User configuration
 
@@ -98,13 +99,10 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# Example aliases
 alias zshconfig="nvim ~/.zshrc"
 alias zshsource="source ~/.zshrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
-alias tmuxconfig="nvim ~/.config/.tmux.conf"
+alias tmuxconfig="nvim ~/.tmux.conf"
 alias tmuxsource="tmux source ~/.tmux.conf"
 #
-# fzf support for **
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

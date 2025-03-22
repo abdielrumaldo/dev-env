@@ -1,0 +1,22 @@
+export XDG_CONFIG_HOME=$HOME/.config
+
+# fzf support for **
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+addPath() {
+    # Check to see if the path we are adding already exists
+    if [[ "$PATH" != *"$1"* ]]; then
+        export PATH=$PATH:$1
+
+    fi
+}
+
+addPathFront() {
+    # Check to see if the path we are adding already exists
+    if [[ "$PATH" != *"$1"* ]]; then
+        export PATH=$1:$PATH
+
+    fi
+}
+
+addPathFront "$HOME/.local/scripts" 
