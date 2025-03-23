@@ -104,5 +104,6 @@ alias zshsource="source ~/.zshrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias tmuxconfig="nvim ~/.tmux.conf"
 alias tmuxsource="tmux source ~/.tmux.conf"
+alias wifi="nmcli radio all on"
 #
 

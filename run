@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+
+log() {
+    if [[ $dry == "1" ]]; then
+        echo "[DRY_RUN]: $@"
+    else
+        echo "$@ \n"
+    fi
+}
+execute() {
+    log "[EXECUTING]: $@ "    
+    if [[ $dry == "1" ]]; then
+        return
+    fi
+    "$@"
+}
+
+script_dir=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
+filter=""
+dry="0"
+
+    
+while [[ $# > 0 ]]; do
+    if [[ $1 == "--dry" ]]; then
+        dry="1"
+    else
+        filter="$1"
+    fi
+    shift
+done
+
+scripts=$(find ./runs -maxdepth 1 -mindepth 1 -executable -type f)
+log "$script_dir -- $filter"
+log "Running: $scripts"
+    
+for script in $scripts; do
+    if echo "$script" | grep -qv "$filter"; then
+        log "Filtering -- $script"
+        continue
+    fi
+
+    execute ./$script
+done
+
