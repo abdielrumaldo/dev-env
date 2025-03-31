@@ -1,8 +1,6 @@
 export XDG_CONFIG_HOME=$HOME/.config
 export EDITOR="nvim"
 
-# For my laptop 
-nmcli radio all on
 
 # fzf support for **
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

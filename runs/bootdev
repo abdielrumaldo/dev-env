@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# For more info: https://github.com/bootdotdev/bootdev?tab=readme-ov-file
+go install github.com/bootdotdev/bootdev@latest

@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# Check for the ready script in the local dir or use the base from the home dir
 if [[ -x ".ready-tmux" ]]; then
    ./.ready-tmux
 elif [[ -x "$HOME/.ready-tmux" ]]; then
