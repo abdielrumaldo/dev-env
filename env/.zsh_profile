@@ -1,6 +1,8 @@
 export XDG_CONFIG_HOME=$HOME/.config
 export EDITOR="nvim"
 
+# If running from tty1 start sway
+[ "$(tty)" = "/dev/tty1" ] && exec sway
 
 # fzf support for **
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

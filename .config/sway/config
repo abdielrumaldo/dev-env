@@ -21,7 +21,7 @@ set $term foot
 
 # ROFI setup
 # set $menu dmenu_path | wmenu | xargs swaymsg exec --
-set $menu "rofi -i -modi drun,run,window -show drun"
+set $menu "rofi -show run"
 
 include /etc/sway/config-vars.d/*
 
