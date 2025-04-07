@@ -6,6 +6,7 @@ date=$(date "+%a %F %R")
 # Alsa master volume
 volume=$(amixer get Master | grep "Mono" | tail -1 | awk '{print $4}' | tr -d '\[\]')
 
+# Battery
 battery=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep percentage | awk '{print $NF}') # Status bar
 battery_rate=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep 'energy-rate' | awk '{print $(NF-1)}')
 battery_state=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep state | awk '{print $NF}')
@@ -15,4 +16,7 @@ if [ "$battery_state" = "charging" ]; then
    battery_message="$battery_state @ $battery_rate W"
 fi
 
-echo "Vol:" [$volume] " | Pow:" [$battery] $battery_message "|" [$date] 
+# Wifi
+wireless_status=$(nmcli | grep wlo | head -1 | awk -v FS=": " '{print $2}')
+
+echo "Wifi:" $wireless_status " | " "Vol:" [$volume] " | Pow:" [$battery] $battery_message "|" [$date] 
