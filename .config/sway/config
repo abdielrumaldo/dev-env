@@ -1,12 +1,8 @@
 # Default config for sway
-#
 # Copy this to ~/.config/sway/config and edit it to your liking.
-#
 # Read `man 5 sway` for a complete reference.
 
 ### Variables
-#
-# Logo key. Use Mod1 for Alt.
 set $mod Mod4
 # Home row direction keys, like vim
 set $left h
@@ -25,11 +21,20 @@ set $menu "rofi -show run"
 
 include /etc/sway/config-vars.d/*
 
+input type:keyboard {
+
+  # Capslock key should work as escape key
+  # See /usr/share/X11/xkb/rules/xorg.lst for options
+  xkb_options caps:swapescape
+
+  repeat_delay 250
+  repeat_rate 45
+}
+
 ### Output configuration
-#
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-#
+
 # Example configuration:
 #
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
