@@ -1,7 +1,4 @@
-# Default config for sway
-# Copy this to ~/.config/sway/config and edit it to your liking.
-# Read `man 5 sway` for a complete reference.
-
+# Default config for sway Copy this to ~/.config/sway/config and edit it to your liking. Read `man 5 sway` for a complete reference.
 ### Variables
 set $mod Mod4
 # Home row direction keys, like vim
@@ -20,6 +17,10 @@ set $term foot
 set $menu "rofi -show run"
 
 include /etc/sway/config-vars.d/*
+
+output eDP-1 {
+    scale 1
+}
 
 input type:keyboard {
 
@@ -42,7 +43,6 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
 ### Idle configuration
-#
 # Example configuration:
 #
 # exec swayidle -w \
