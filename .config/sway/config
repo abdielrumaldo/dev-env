@@ -19,7 +19,7 @@ set $menu "rofi -show run"
 include /etc/sway/config-vars.d/*
 
 output eDP-1 {
-    scale 1
+    scale 1.2
 }
 
 input type:keyboard {
@@ -72,6 +72,15 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #
 # Basics:
 #
+    # Audio
+    set $toggle_mute amixer -q sset Master toggle
+    set $volume_up amixer -q sset Master 10%+
+    set $volume_down amixer -q sset Master 10%-
+
+    bindsym XF86AudioMute exec $toggle_mute
+    bindsym XF86AudioLowerVolume exec $volume_down
+    bindsym XF86AudioRaiseVolume exec $volume_up
+
     # Start a terminal
     bindsym $mod+Return exec $term
 
