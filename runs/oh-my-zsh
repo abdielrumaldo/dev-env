@@ -9,3 +9,4 @@ git clone --depth 1 https://github.com/zsh-users/zsh-completions "$HOME/$OMZ_PLU
 git clone --depth 1 https://github.com/zsh-users/zsh-syntax-highlighting "$HOME/$OMZ_PLUGIN/zsh-syntax-highlighting" 
 git clone --depth 1 https://github.com/agkozak/zsh-z "$HOME/$OMZ_PLUGIN/zsh-z" 
 git clone --depth 1 https://github.com/unixorn/fzf-zsh-plugin.git "$HOME/$OMZ_PLUGIN/fzf-zsh-plugin" 
+ 

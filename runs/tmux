@@ -4,3 +4,5 @@ script_dir=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
 
 sudo apt install tmux
 git clone --depth 1 https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm" 
+
+# Dont forget to use the shortcut CONTROL + SHIFT + i
