@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
 
 curl -sS https://webi.sh/golang | sh
+
+go install github.com/reteps/dockerfmt@latest
+go install github.com/google/yamlfmt/cmd/yamlfmt@latest
