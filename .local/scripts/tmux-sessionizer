@@ -1,37 +1,41 @@
 #!/usr/bin/env bash
 #
+# tmux-sessionizer: Quickly create or switch to tmux sessions
+# for project directories. Pass a path as an argument or use
+# fzf to interactively select one.
+# Select a project directory via argument or fzf
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find ~/.config/ ~/personal ~/Documents/ ~/Downloads ~/personal/repos -mindepth 1 -maxdepth 1 -type d | fzf)
+    selected=$(find \
+        ~/.config/ \
+        ~/personal \
+        ~/personal/repos \
+        ~/Documents/ \
+        ~/Downloads \
+        ~/work/repos \
+        ~/work/repos/etl-on-aws/Fargate/Tasks/ \
+        -mindepth 1 -maxdepth 1 -type d | fzf)
 fi
-
-if [[ -z $selected ]]; then
-	exit 0
-fi
-
-# tr replaces any charcters given and input into an output
+# Exit if nothing was selected (user cancelled fzf)
+[[ -z $selected ]] && exit 0
+# Replace special characters with underscores for a valid tmux session name
 selected_name=$(basename "$selected" | tr ";:,." "____")
-
+# Attach or switch to the session depending on whether we're already in tmux
 switch_to() {
-    # if were not in tmux, put me in coach
     if [[ -z $TMUX ]]; then
-        tmux attach-session -t $selected_name
+        tmux attach-session -t "$selected_name"
     else
-        tmux switch-client -t $selected_name
+        tmux switch-client -t "$selected_name"
     fi
 }
-
-# If it exists, attach
-if tmux has-session -t=$selected_name 2> /dev/null; then
+# If session already exists, just switch to it
+if tmux has-session -t="$selected_name" 2>/dev/null; then
     switch_to
     exit 0
 fi
-
-# If it doesn', create
-tmux new-session -ds $selected_name -c $selected
+# Otherwise create a new detached session and switch to it
+tmux new-session -ds "$selected_name" -c "$selected"
 switch_to
-
-tmux send-keys -t $selected_name "ready-tmux" ^M
-
-
+# Run project setup script in the new session
+tmux send-keys -t "$selected_name" "ready-tmux" Enter

@@ -29,7 +29,7 @@ while [[ $# > 0 ]]; do
     shift
 done
 
-scripts=$(find ./runs -maxdepth 1 -mindepth 1 -executable -type f)
+scripts=$(find ./runs -maxdepth 1 -mindepth 1 -type f)
 log "$script_dir -- $filter"
 log "Running: $scripts"
     

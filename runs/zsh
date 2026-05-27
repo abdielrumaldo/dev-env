@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
-sudo apt install zsh
+brew install zsh
 
 if [ -f ~/bin/zsh ]; then
    "~/bin/zsh -l"
 fi  
+
+# DONT FORGET TO FETCH PLUGINS USING Ctrl + b and then Shift + i
