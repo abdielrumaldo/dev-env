@@ -2,6 +2,7 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="$HOME/.local/bin:$PATH"
 export PATH=$PATH:$HOME/go/bin
+export ZSH_TMUX_AUTOSTART=true
 
 # Path to  oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -23,6 +24,7 @@ SPACESHIP_PROMPT_ORDER=(
 
 plugins=(
     git
+    tmux
     zsh-autosuggestions
     zsh-completions
     fzf-zsh-plugin
@@ -32,6 +34,7 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.zsh_profile
+
 
 # Aliases
 alias zshconfig="nvim ~/.zshrc"
@@ -44,4 +47,5 @@ alias vmrss="bash ~/.config/bin/vmrss"
 
 # fzf support for **
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 

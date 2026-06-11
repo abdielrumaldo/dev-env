@@ -5,4 +5,4 @@ script_dir=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
 brew install tmux
 git clone --depth 1 https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm" 
 
-## DONT FORGET TO RUN PREFIX + SHIFT + I to install the plugins inside tmux
+## DONT FORGET TO RUN PREFIX + SHIFT + i to install the plugins inside tmux

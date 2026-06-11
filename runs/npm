@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-sudo apt install npm
-
-# Use npm to install js-beautify globally
-npm install -g js-beautify

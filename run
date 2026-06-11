@@ -29,6 +29,9 @@ while [[ $# > 0 ]]; do
     shift
 done
 
+log "Running Requirements"
+execute $script_dir/requirements.sh
+
 scripts=$(find ./runs -maxdepth 1 -mindepth 1 -type f)
 log "$script_dir -- $filter"
 log "Running: $scripts"

@@ -8,3 +8,6 @@ brew install fzf
 
 # Used by conform
 brew install deno
+go install github.com/reteps/dockerfmt@latest
+go install github.com/google/yamlfmt/cmd/yamlfmt@latest
+npm install -g js-beautify

@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-brew install opencode
-brew install jq
-brew install fd
