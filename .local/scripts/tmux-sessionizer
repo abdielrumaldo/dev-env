@@ -19,9 +19,10 @@ else
 fi
 # Exit if nothing was selected (user cancelled fzf)
 [[ -z $selected ]] && exit 0
-#
+
 # Replace special characters with underscores for a valid tmux session name
 selected_name=$(basename "$selected" | tr ";:,." "____")
+
 # Attach or switch to the session depending on whether we're already in tmux
 switch_to() {
     if [[ -z $TMUX ]]; then
@@ -35,8 +36,10 @@ if tmux has-session -t="$selected_name" 2>/dev/null; then
     switch_to
     exit 0
 fi
+
 # Otherwise create a new detached session and switch to it
 tmux new-session -ds "$selected_name" -c "$selected"
 switch_to
+
 # Run project setup script in the new session
 tmux send-keys -t "$selected_name" "ready-tmux" Enter
