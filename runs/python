@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-sudo brew install uv
+sudo brew install uv &>/dev/null
 uv tool install ruff
 uv tool install ty@latest
 uv tool install djlint
